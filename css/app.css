@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #8795a1;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #22292f;
+}
+
+p {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+img {
+    display: initial;
+}
+
+.button {
+    background-color: #328af1;
+}
+
+.button:hover {
+    background-color: #2779bd;
+}
+
+/* header component */
+.header {
+    display: block;
+    text-align: center;
+    margin: 22px auto;
+}
+
+.header__title {
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+
+.header__subtitle {
+    color: #8795a1;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+/* button */
+.button {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: .76rem 2rem;
+    border-radius: 18px;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.button:focus,
+.button:hover {
+    outline: none;
+}
+
+.button--in-bg {
+    color: #ffffff;
+    background-color: #328af1;
+}
+
+.button--in-bg:hover {
+    background-color: #2779bd;
+}
+
+.button--in-bd {
+    color: #328af1;
+    font-size: 18px;
+    padding: 10px 32px;
+    border: 1px solid #328af1;
+    background-color: transparent;
+}
+
+.button--in-bd:hover {
+    color: #2779bd;
+    border: 1px solid #2779bd;
+    background-color: transparent;
+}
+
+.button--tiny {
+    color: #2779bd;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 4px 16px;
+    border: 1px solid #bfc0c0;
+}
+
+.button--tiny:hover {
+    color: #2779bd;
+    border-color: #328af1;
+    background-color: transparent;
+}
+
+/* contact list */
+.contact-list {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* contact item component */
+.contact-item {
+    display: flex;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    border: 1px solid #8795a1;
+    background-color: #ffffff;
+}
+
+.contact-item__avatar {
+    margin-right: 12px;
+}
+
+.contact-item__info {
+    text-align: left;
+}
+
+.contact-item__info__name {
+    display: inline-flex;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+}
+
+.contact-item__info__mobile {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+/* avatar */
+.avatar {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+}
+
+/* New contact form component */
+.new-contact {
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0;
+}
