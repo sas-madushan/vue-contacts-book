@@ -1,8 +1,11 @@
-
-
 // New contact component
 Vue.component('new-contact', {
-    props: {},
+    props: {
+        handleOnSubmitContcat: {
+            type: Function,
+            required: true
+        }
+    },
     template: `
         <div class="new-contact">
             <form v-on:submit.prevent="submitNewContact">
@@ -13,6 +16,8 @@ Vue.component('new-contact', {
                                 class="form-control" 
                                 placeholder="Full Name"
                                 type="text" 
+                                v-model="name"
+                                @input="handleChangeName"
                             />
                         </div>
                     </div>
@@ -21,7 +26,9 @@ Vue.component('new-contact', {
                             <input 
                                 class="form-control" 
                                 type="text"
+                                v-model="mobile"
                                 placeholder="Mobile Number" 
+                                @input="handleChangeMobile"
                             />
                         </div>
                     </div>
@@ -43,10 +50,26 @@ Vue.component('new-contact', {
             mobile: null,
         }
     },
+    computed: {
+
+    },
     methods: {
+        handleChangeName: function (e) {
+            const name = e.target.value;
+            this.name = name
+        },
+        handleChangeMobile: function (e) {
+            const mobile = e.target.value;
+            this.mobile = mobile
+        },
         submitNewContact: function (e) {
             e.preventDefault();
-            console.log('submit');
+            const name = this.name;
+            const mobile = this.mobile;
+
+            this.handleOnSubmitContcat(name, mobile)
+            this.name = null;
+            this.mobile = null;
         }
     }
 });
@@ -151,7 +174,10 @@ Vue.component('app', {
                         subtitle="Save Your Mobile Contacts"
                         :handleVisibility="handleVisibility"
                     ></app-header>
-                    <new-contact v-if="visibility"></new-contact>
+                    <new-contact 
+                        v-if="visibility"
+                        :handleOnSubmitContcat="handleOnSubmitContcat"
+                    ></new-contact>
                 </div>
             </div>
             <div class="row">
